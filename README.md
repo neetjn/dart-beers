@@ -19,17 +19,17 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 ## What I've Learned
 
-...
+* Dart is AOT (Ahead Of Time) compiled to fast, predictable, native code, which allows almost all of Flutter to be written in Dart. This not only makes Flutter fast, virtually everything (including all the widgets) can be customized.
+
+* Dart can also be JIT (Just In Time) compiled for exceptionally fast development cycles and game-changing workflow (including Flutter’s popular sub-second stateful hot reload).
 
 ## Closing Thoughts
 
 ...
 
-...
-
 ## Resources
 
-...
+* Why Flutter Uses Dart - https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
 
 ---
 
