@@ -25,6 +25,10 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 * Dart can also be JIT (Just In Time) compiled for exceptionally fast development cycles and game-changing workflow (including Flutter’s popular sub-second stateful hot reload).
 
+* Dart can be compiled into Javascript, and the standard library includes a wrapper for the DOM. This means both backend and frontend code can be written with Dart.
+
+* Flutter, an SDK developed by Google for building native iOS and Android apps, allows developers to create mobile apps using **just** Dart.
+
 ## Closing Thoughts
 
 ...
