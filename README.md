@@ -36,6 +36,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 ## Resources
 
 * Why Flutter Uses Dart - https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
+* Effective Dart (Code Styling) - https://www.dartlang.org/guides/language/effective-dart
 
 ---
 
