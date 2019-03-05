@@ -26,8 +26,15 @@ This project was created to learn Dart basics, as well as common use cases from 
 * Dart can also be JIT (Just In Time) compiled for exceptionally fast development cycles and game-changing workflow (including Flutter’s popular sub-second stateful hot reload).
 
 * Dart can be compiled into Javascript, and the standard library includes a wrapper for the DOM. This means both backend and frontend code can be written with Dart.
+  * Re: [Dart Platforms](https://www.dartlang.org/guides/platforms)
 
 * Flutter, an SDK developed by Google for building native iOS and Android apps, allows developers to create mobile apps using **just** Dart.
+
+* `pub` is the defacto package manager for Dart. It's officially supported and maintained by Google.
+  * Packages can be found here https://pub.dartlang.org/
+  * The package manager is very similar to gem (ruby), npm (node), pip/pipenv(python), and dep (go).
+  * pub does **not** generate a pubspec file for you (similar to node's package.json or pipenv's pipfile).
+
 
 ## Closing Thoughts
 
