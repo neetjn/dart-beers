@@ -4,8 +4,9 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 ## Experiments
 
-* [ ] Create a local package, module, or library and utilize it in our entry point.
-* [ ] Leverage go package manager for 3rd party packages.
+* [x] Create a local package, module, or library and utilize it in our entry point.
+* [x] Leverage pub package manager for 3rd party packages.
+* [x] Read from environmental variables.
 * [ ] Read from a file in a local directory.
 * [ ] Create a basic DTO (data transfer object).
 * [ ] Marshal and unmarshal DTO to string and Dart structure.
