@@ -16,6 +16,8 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [ ] Experiment with decorators for simplifying common REST features.
 * [ ] Dockerize application (include 3rd party packages).
 * [ ] Create unit tests and execute on a CI/CD platform.
+* [ ] Connect to a relational database (Postgres).
+* [ ] Connect to a no-sql database (Mongo).
 
 ## What I've Learned
 
