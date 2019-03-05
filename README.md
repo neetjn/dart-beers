@@ -27,6 +27,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 * Dart can be compiled into Javascript, and the standard library includes a wrapper for the DOM. This means both backend and frontend code can be written with Dart.
   * Re: [Dart Platforms](https://www.dartlang.org/guides/platforms)
+  * Re: [dart2js](https://webdev.dartlang.org/tools/dart2js)
 
 * Flutter, an SDK developed by Google for building native iOS and Android apps, allows developers to create mobile apps using **just** Dart.
 

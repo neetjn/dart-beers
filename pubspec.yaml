@@ -6,8 +6,3 @@ author: John Nolette <john@neetgroup.net>
 homepage: https://github.com/neetjn/dart-beers
 environment:
   sdk: '>=2.0.0 <3.0.0'
-dependencies:
-  efts: ^2.0.4
-  transmogrify: ^0.4.0
-dev_dependencies:
-  test: '>=0.6.0 <0.12.0'
