@@ -46,6 +46,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 * Why Flutter Uses Dart - https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
 * Effective Dart (Code Styling) - https://www.dartlang.org/guides/language/effective-dart
+* How to do CRUD with Postgres - https://medium.com/flutterpub/flutter-how-to-do-crud-with-postgresql-part-1-57d8d3652a31
 
 ---
 
