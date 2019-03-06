@@ -2,6 +2,8 @@
 
 This project was created to learn Dart basics, as well as common use cases from other languages I use on a daily basis. I'll be recording my experiments and what I've learned while treking through Dart.
 
+> Note: For this project/experiment I'm leveraging [aqueduct](https://aqueduct.io/); *an extensible HTTP framework for building REST APIs on top of the Dart VM*.
+
 ## Experiments
 
 * [x] Create a local package, module, or library and utilize it in our entry point.
