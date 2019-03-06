@@ -1,7 +1,11 @@
-class Beer extends ManagedObject<_Beer> implements Beer{}
+library beers.lib.constants;
 
-class _Beer {
-  @ManagedPrimaryKey
-  String name;
-  String
-}
+import 'package:aqueduct';
+
+// class Beer extends ManagedObject<_Beer> implements Beer{}
+
+// class _Beer {
+//   @ManagedPrimaryKey
+//   String name;
+//   String
+// }

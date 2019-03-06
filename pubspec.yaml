@@ -6,4 +6,5 @@ author: John Nolette <john@neetgroup.net>
 homepage: https://github.com/neetjn/dart-beers
 environment:
   sdk: '>=2.0.0 <3.0.0'
+dependencies:
   aqueduct: '<=3.1.0+1'
