@@ -15,6 +15,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [ ] Handle multiple different HTTP verbs.
 * [ ] Handle and manipulate different media types.
 * [ ] Experiment with decorators for simplifying common REST features.
+* [ ] Add user authentication functionality.
 * [ ] Dockerize application (include 3rd party packages).
 * [ ] Create unit tests and execute on a CI/CD platform.
 * [ ] Connect to a relational database (Postgres).
