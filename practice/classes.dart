@@ -26,15 +26,15 @@ class User {
   }
 
   // anonymous type
-  randomMessage() {
-    var str = Dictionary.map((f) => f);
-    print(str);
-    return 5;
+  randomMessage([int length=5]) {
+    // var str = Dictionary.where((w) => w.length <= 3).map((w) => '${w} ${rnd.nextInt()}');
+    var msg = Iterable.generate(length).map((_) => Dictionary[rnd.nextInt(Dictionary.length)]).join(' ');
+    return msg;
   }
 }
 
 void main() {
   User user = new User('neetjn', 'John Nolette');
   user.message();
-  user.randomMessage();
+  print(user.randomMessage());
 }

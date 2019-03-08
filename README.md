@@ -60,6 +60,20 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 * Scoping is almost a mesh between both Python and Node. As where in javascript, scopes almost seem to be lost in the sawce, Dart follows an approach similar to Python whilst still leveraging Javascript style closure.
 
+* Dart is **not** a functional language. It is a procedural language with functional aspects. It supports first class functions with many other functional programming constructs.
+
+* Dart, like Python and the new specification of Javascript, supports loose iterators. Take the following Python code for example:
+
+  ```python
+  dictionary = [n for n in range(5)]
+  # >> 0, 1, 2, 3, 4
+  ```
+
+  Dart Translation:
+
+  ```dart
+  var dictionary = Iterable.generate(5)
+  ```
 
 ## Closing Thoughts
 
