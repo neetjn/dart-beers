@@ -5,8 +5,7 @@ import 'package:aqueduct/aqueduct.dart';
 class Beer extends ManagedObject<_Beer> implements _Beer{}
 
 // essentially a DAO?
-// add documentation for what's going on with the -
-// @ symbol/decorator
+// document what's going on with the annotations
 class _Beer {
   @primaryKey
   String id;
