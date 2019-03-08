@@ -120,6 +120,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 * How to do CRUD with Postgres - https://medium.com/flutterpub/flutter-how-to-do-crud-with-postgresql-part-1-57d8d3652a31
 * Dart gets a Type System - https://medium.com/dartlang/dart-gets-a-type-system-6bd3121772de
 * Top 10 Array utility methods you should know - https://codeburst.io/top-10-array-utility-methods-you-should-know-dart-feb2648ee3a2
+* Implicit Interfaces - https://www.dartlang.org/guides/language/language-tour#ch02-implicit-interfaces
 
 ---
 

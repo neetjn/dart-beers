@@ -11,7 +11,15 @@ class SwapiRelMap {
   static final String Starships = 'starships';
 }
 
-final Uri SwapiBaseUri = Uri.parse('https://swapi.co/api/');
+class SwapiClient {
+  final Uri SwapiBaseUri = Uri.parse('https://swapi.co/api/');
+
+  await SwapiClient() {
+
+  }
+}
+
+
 Uri peopleUri;
 
 void main() {
