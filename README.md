@@ -40,6 +40,26 @@ This project was created to learn Dart basics, as well as common use cases from 
   * The package manager is very similar to gem (ruby), npm (node), pip/pipenv(python), and dep (go).
   * pub does **not** generate a pubspec file for you (similar to node's package.json or pipenv's pipfile).
 
+* High order programming in Dart is common place. Lambdas are also very similar to Javascript, and there are numerous javascript-like builtin functions ie; map, reduce, filter at your disposal.
+
+
+  Javascript:
+
+  ```js
+  const dictionary = ['Foo', 'Bar', 'Lorem', 'Ipsum'];
+  let reversed = dictionary.map(w => w.split('').reverse().join(''))
+  ```
+
+  Dart:
+  ```dart
+  const dictionary = ['Foo', 'Bar', 'Lorem', 'Ipsum'];
+  var reversed = dictionary.map((w) => w.split('').reversed.join(''));
+  ```
+
+* Typings were shipped with Dart 2, but types are **not** enforced or required. However, typings are available if necessary and the compiler does well to help thwart out any serious semantical problems while debugging.
+
+* Scoping is almost a mesh between both Python and Node. As where in javascript, scopes almost seem to be lost in the sawce, Dart follows an approach similar to Python whilst still leveraging Javascript style closure.
+
 
 ## Closing Thoughts
 
@@ -50,6 +70,8 @@ This project was created to learn Dart basics, as well as common use cases from 
 * Why Flutter Uses Dart - https://hackernoon.com/why-flutter-uses-dart-dd635a054ebf
 * Effective Dart (Code Styling) - https://www.dartlang.org/guides/language/effective-dart
 * How to do CRUD with Postgres - https://medium.com/flutterpub/flutter-how-to-do-crud-with-postgresql-part-1-57d8d3652a31
+* Dart gets a Type System - https://medium.com/dartlang/dart-gets-a-type-system-6bd3121772de
+* Top 10 Array utility methods you should know - https://codeburst.io/top-10-array-utility-methods-you-should-know-dart-feb2648ee3a2
 
 ---
 
