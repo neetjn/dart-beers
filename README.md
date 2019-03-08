@@ -75,6 +75,40 @@ This project was created to learn Dart basics, as well as common use cases from 
   var dictionary = Iterable.generate(5)
   ```
 
+* Dart code runs in a single thread like Node (using an event loop), however offers asynchronous programming in the form of Futures which are heavily influenced by Javascript style promises. To run code concurrently, you can create an isolate (server) or worker (web).
+
+  Javascript Promise:
+  ```js
+  function doSomething() {
+    return new Promise((resolve, reject) => {
+      resolve(5)
+    })
+  }
+  doSomething()
+    .then(result => console.log(result))
+    .catchError(error => console.error(error))
+  ```
+
+  Dart Future:
+  ```dart
+  Future<int> doSomething() {
+    return new Future(() {
+      return 5;
+    })
+  }
+  doSomething()
+    .then((result) {
+      print(result)
+    }, onError: (e) {
+      // catch error from the initial future
+      print(e)
+    })
+    .catchError((e) {
+      // handle error from within the .then callback
+      print(e)
+    })
+  ```
+
 ## Closing Thoughts
 
 ...
