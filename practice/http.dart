@@ -1,11 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
 
-
-Future test() {
-  return new Future.microtask(() => 5);
-}
-
 void main() {
   HttpClient()
     // produces a request object
@@ -13,6 +8,7 @@ void main() {
     // sends the request
     .then((request) => request.close())
     // transforms and prints the response
-    .then((response) =>
-      response.transform(Utf8Decoder()).listen(print));
+    .then((response) {
+      response.transform(Utf8Decoder()).listen(print);
+    });
 }
