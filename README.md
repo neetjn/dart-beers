@@ -12,6 +12,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [ ] Read from a file in a local directory.
 * [x] Create a basic DTO (data transfer object).
 * [x] Marshal and unmarshal DTO to string and Dart structure.
+* [x] Create an object factory/generator.
 * [ ] Expose REST endpoints for the experiment application.
 * [ ] Create a service description for my REST endpoints, following the HATEOAS model.
 * [ ] Handle multiple different HTTP verbs.
@@ -107,6 +108,21 @@ This project was created to learn Dart basics, as well as common use cases from 
       // handle error from within the .then callback
       print(e)
     })
+  ```
+
+* Like TypeScript, Dart allows for *implict* interfaces:
+
+  ```dart
+  abstract class Person {
+    String name;
+    int age;
+
+    void birthday();
+  }
+
+  class Worker inherits Person {
+    ...
+  }
   ```
 
 ## Closing Thoughts

@@ -11,7 +11,9 @@ class SwapiRelMap {
   static final String Starships = 'starships';
 }
 
-class ApiRootDto {
+abstract class Dto {}
+
+class ApiRootDto implements Dto {
   Map links;
 
   ApiRootDto.fromJson(Map json) {
@@ -26,7 +28,7 @@ class ApiRootDto {
   }
 }
 
-class PersonDto {
+class PersonDto implements Dto {
   String href;
   String name;
   int height;
@@ -55,49 +57,65 @@ class PersonDto {
   }
 }
 
-class PersonCollectionDto {
+class PersonCollectionDto implements Dto {
   int count;
   List<PersonDto> items;
 
   PersonCollectionDto.fromJson(Map json) {
+    print(json);
     this.count = json['count'];
     this.items = json['results'].map((result) => new PersonDto.fromJson(result));
   }
 }
 
 class SwapiClient {
-  final Uri SwapiBaseUri = Uri.parse('https://swapi.co/api/');
-  ApiRootDto apiRoot;
+  final String SwapiBaseUri = 'https://swapi.co/api/';
 
-  SwapiClient() {
-    HttpClient()
-      .getUrl(this.SwapiBaseUri)
-      .then((request) => request.close())
-      .then((response) {
-        response.transform(Utf8Decoder()).listen((body) {
-          var _json = json.decode(body);
-          this.apiRoot = ApiRootDto.fromJson(_json);
-        });
+  Future<Map> _request(String href) async {
+    Map content;
+    var request = await HttpClient().getUrl(Uri.parse(href));
+    var response = await request.close();
+    // TODO: left here, resolve issues with transformer
+    await response
+      .transform(utf8.decoder)
+      .transform(json.decoder)
+      .listen((contents) {
+        print(contents);
+        content = contents;
       });
+    print(content);
+    return content;
   }
 
-  PersonCollectionDto getPeople(String href) {
-
+  Future<ApiRootDto> getApiRoot() async {
+    return await this._request(this.SwapiBaseUri).then((body) {
+      return new ApiRootDto.fromJson(body);
+    });
   }
 
-  PersonDto getPerson(String href) {
+  Future<PersonCollectionDto> getPeople(String href) async {
+    return await this._request(href).then((body) {
+      print(body);
+      return new PersonCollectionDto.fromJson(body);
+    });
+  }
 
+  Future<PersonDto> getPerson(String href) async {
+    return await this._request(href).then((body) {
+      return new PersonDto.fromJson(body);
+    });
   }
 }
 
-
-Uri peopleUri;
-
-void main() {
+void main() async {
   SwapiClient client = new SwapiClient();
-  var peopleHref = client.apiRoot.links[SwapiRelMap.People];
-  PersonCollectionDto people = client.getPeople(peopleHref);
-  var personHref = people.items[0].href;
-  PersonDto person = client.getPerson(personHref);
-  print(person);
+  ApiRootDto apiRoot = await client.getApiRoot();
+  // print(apiRoot);
+  // print(apiRoot.links);
+  // var peopleHref = apiRoot.links[SwapiRelMap.People];
+  // print(peopleHref);
+  // PersonCollectionDto people = await client.getPeople(peopleHref);
+  // var personHref = people.items[0].href;
+  // PersonDto person = await client.getPerson(personHref);
+  // print(person);
 }
