@@ -27,6 +27,7 @@ class ApiRootDto {
 }
 
 class PersonDto {
+  String href;
   String name;
   int height;
   String hairColor;
@@ -37,6 +38,7 @@ class PersonDto {
   String worldHref;
 
   PersonDto.fromJson(Map json) {
+    this.href = json['url'];
     this.name = json['name'];
     this.height = json['height'];
     this.hairColor = json['hair_color'];
@@ -45,6 +47,11 @@ class PersonDto {
     this.birthYear = json['birth_year'];
     this.gender = json['gender'];
     this.worldHref = json['homeworld'];
+  }
+
+  @override
+  String toString() {
+    return '${this.href} | ${this.name}';
   }
 }
 
@@ -88,7 +95,9 @@ Uri peopleUri;
 
 void main() {
   SwapiClient client = new SwapiClient();
-  var peopleLink = client.apiRoot.links[SwapiRelMap.People];
-  PersonCollectionDto = client.getPeople(peopleLink);
-  PersonDto person = client.getPerson();
+  var peopleHref = client.apiRoot.links[SwapiRelMap.People];
+  PersonCollectionDto people = client.getPeople(peopleHref);
+  var personHref = people.items[0].href;
+  PersonDto person = client.getPerson(personHref);
+  print(person);
 }
