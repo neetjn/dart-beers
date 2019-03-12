@@ -10,13 +10,13 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [x] Leverage pub package manager for 3rd party packages.
 * [x] Read from environmental variables.
 * [ ] Read from a file in a local directory.
-* [ ] Create a basic DTO (data transfer object).
-* [ ] Marshal and unmarshal DTO to string and Dart structure.
+* [x] Create a basic DTO (data transfer object).
+* [x] Marshal and unmarshal DTO to string and Dart structure.
 * [ ] Expose REST endpoints for the experiment application.
 * [ ] Create a service description for my REST endpoints, following the HATEOAS model.
 * [ ] Handle multiple different HTTP verbs.
 * [ ] Handle and manipulate different media types.
-* [ ] Experiment with decorators for simplifying common REST features.
+* [ ] Experiment with annotations for simplifying common REST features.
 * [ ] Add user authentication functionality.
 * [ ] Dockerize application (include 3rd party packages).
 * [ ] Create unit tests and execute on a CI/CD platform.
