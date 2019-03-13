@@ -41,8 +41,12 @@ class ApiRootDto implements Dto {
   }
 }
 
+/// Container for SWAPI person resource.
 ///
+/// Defines an entity for SWAPI "person" objects.
+/// This class implements Dto and provides JSON serialization.
 ///
+///   PersonDto person = new PersonDto.fromJson(...);
 class PersonDto implements Dto {
   String href;
   String name;
@@ -72,6 +76,12 @@ class PersonDto implements Dto {
   }
 }
 
+/// Container for a collection of SWAPI person resources.
+///
+/// Defines an entity for a collection of SWAPI "person" objects.
+/// This class implements Dto and provides JSON serialization.
+///
+///   PersonCollectionDto person = new PersonCollectionDto.fromJson(...);
 class PersonCollectionDto implements Dto {
   int count;
   List<PersonDto> items;
@@ -82,6 +92,10 @@ class PersonCollectionDto implements Dto {
   }
 }
 
+/// SWAPI client for requesting and serializing resources into entities.
+///
+/// Defines a controller for fetching SWAPI resources.
+/// The provided utilities automatically serializes responses into their corresponding entity.
 class SwapiClient {
   final String SwapiBaseUri = 'https://swapi.co/api/';
 
@@ -91,18 +105,28 @@ class SwapiClient {
     return utf8.decodeStream(response).then((body) => json.decode(body));
   }
 
+  /// Fetches SWAPI apiroot and returns a future with mapped links.
+  ///   ApiRootDto apiroot = await client.getApiRoot();
+  ///   String peopleHref = apiroot.links[SwapiRelMap.People];
   Future<ApiRootDto> getApiRoot() async {
     return await this._request(this.SwapiBaseUri).then((body) {
       return new ApiRootDto.fromJson(body);
     });
   }
 
+  /// Fetches collection of people from SWAPI and returns a future with a serialized entity.
+  ///   PeopleCollectionDto people = await client.getPeople(peopleHref);
+  ///   int count = people.count;
+  ///   PersonDto person = people.items[0];
   Future<PersonCollectionDto> getPeople(String href) async {
     return await this._request(href).then((body) {
       return new PersonCollectionDto.fromJson(body);
     });
   }
 
+  /// Fetches a single person from SWAPI and returns a future with a serialized entity.
+  ///   PeopleCollectionDto people = await client.getPeople(peopleHref);
+  ///   PersonDto person = await client.getPerson(people[0].href);
   Future<PersonDto> getPerson(String href) async {
     return await this._request(href).then((body) {
       return new PersonDto.fromJson(body);
