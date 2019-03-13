@@ -2,6 +2,12 @@ import 'dart:async';
 import 'dart:io';
 import 'dart:convert';
 
+/// Container for SWAPI resource labels.
+///
+/// Defines href relations for looking up links.
+/// This class is not to be instantiated, it is a static enum.
+///
+///   String peopleHref = apiRoot[SwapiRelMap.People];
 class SwapiRelMap {
   static final String People = 'people';
   static final String Planets = 'planets';
@@ -13,6 +19,13 @@ class SwapiRelMap {
 
 abstract class Dto {}
 
+/// Container for SWAPI api root.
+///
+/// Defines links for api resources.
+/// Any new links added must be mapped with a label in the SwapiRelMap class.
+/// This class implements Dto and provides JSON serialization.
+///
+///   ApiRootDto apiRoot = new ApiRootDto.fromJson(...);
 class ApiRootDto implements Dto {
   Map links;
 
@@ -28,6 +41,8 @@ class ApiRootDto implements Dto {
   }
 }
 
+///
+///
 class PersonDto implements Dto {
   String href;
   String name;
