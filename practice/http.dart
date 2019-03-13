@@ -35,14 +35,14 @@ class PersonDto implements Dto {
   String hairColor;
   String skinColor;
   String eyeColor;
-  int birthYear;
+  String birthYear;
   String gender;
   String worldHref;
 
   PersonDto.fromJson(Map json) {
     this.href = json['url'];
     this.name = json['name'];
-    this.height = json['height'];
+    this.height = int.parse(json['height']);
     this.hairColor = json['hair_color'];
     this.skinColor = json['skin_color'];
     this.eyeColor = json['eye_color'];
@@ -62,9 +62,8 @@ class PersonCollectionDto implements Dto {
   List<PersonDto> items;
 
   PersonCollectionDto.fromJson(Map json) {
-    print(json);
     this.count = json['count'];
-    this.items = json['results'].map((result) => new PersonDto.fromJson(result));
+    this.items = json['results'].map<PersonDto>((result) => new PersonDto.fromJson(result)).toList();
   }
 }
 
@@ -72,19 +71,9 @@ class SwapiClient {
   final String SwapiBaseUri = 'https://swapi.co/api/';
 
   Future<Map> _request(String href) async {
-    Map content;
     var request = await HttpClient().getUrl(Uri.parse(href));
     var response = await request.close();
-    // TODO: left here, resolve issues with transformer
-    await response
-      .transform(utf8.decoder)
-      .transform(json.decoder)
-      .listen((contents) {
-        print(contents);
-        content = contents;
-      });
-    print(content);
-    return content;
+    return utf8.decodeStream(response).then((body) => json.decode(body));
   }
 
   Future<ApiRootDto> getApiRoot() async {
@@ -95,7 +84,6 @@ class SwapiClient {
 
   Future<PersonCollectionDto> getPeople(String href) async {
     return await this._request(href).then((body) {
-      print(body);
       return new PersonCollectionDto.fromJson(body);
     });
   }
@@ -110,12 +98,14 @@ class SwapiClient {
 void main() async {
   SwapiClient client = new SwapiClient();
   ApiRootDto apiRoot = await client.getApiRoot();
-  // print(apiRoot);
-  // print(apiRoot.links);
-  // var peopleHref = apiRoot.links[SwapiRelMap.People];
-  // print(peopleHref);
-  // PersonCollectionDto people = await client.getPeople(peopleHref);
-  // var personHref = people.items[0].href;
-  // PersonDto person = await client.getPerson(personHref);
-  // print(person);
+  var peopleHref = apiRoot.links[SwapiRelMap.People];
+  PersonCollectionDto people = await client.getPeople(peopleHref);
+  var personHref = people.items[0].href;
+  PersonDto person = await client.getPerson(personHref);
+  print(
+    'In a land far far away...\n'
+    '${person.name} was born in ${person.birthYear}...\n'
+    'With ${person.hairColor} colored hair and ${person.eyeColor} eyes.'
+  );
+  exit(1);
 }
