@@ -12,4 +12,13 @@ void main() {
   assert(t.trim().length == 7);
   assert(t.trimRight().length == 8);
   assert(t.trimLeft().length == 8);
+  String m = 'hello' ' world';
+  assert(m.length == 11);
+  String ml = '''
+  this
+  is
+  a
+  multline
+  test''';
+  print(ml);
 }

@@ -10,6 +10,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [annotations.dart](https://github.com/neetjn/dart-beers/blob/master/practice/annotations.dart) - (TODO) Simple annotation examples.
 * [classes.dart](https://github.com/neetjn/dart-beers/blob/master/practice/classes.dart) - Simple class exercise.
 * [errors.dart](https://github.com/neetjn/dart-beers/blob/master/practice/errors.dart) - Simple exercise for handling errors.
+* [io.dart](https://github.com/neetjn/dart-beers/blob/master/practice/io.dart) - Simple exercise for reading from and writing to a file.
 * [list.dart](https://github.com/neetjn/dart-beers/blob/master/practice/list.dart) - Simple exercise for lists and iterables.
 * [num.dart](https://github.com/neetjn/dart-beers/blob/master/practice/num.dart) - Simple arithmetic and algebra using Dart.
 * [string.dart](https://github.com/neetjn/dart-beers/blob/master/practice/string.dart) - Simple string exercises.
@@ -19,7 +20,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [x] Create a local package, module, or library and utilize it in our entry point.
 * [x] Leverage pub package manager for 3rd party packages.
 * [x] Read from environmental variables.
-* [ ] Read from a file in a local directory.
+* [x] Read from a file in a local directory.
 * [x] Create a basic DTO (data transfer object).
 * [x] Marshal and unmarshal DTO to string and Dart structure.
 * [x] Create an object factory/generator.
