@@ -4,6 +4,11 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 > Note: For this project/experiment I'm leveraging [aqueduct](https://aqueduct.io/); *an extensible HTTP framework for building REST APIs on top of the Dart VM*.
 
+## Practices
+
+* [http.dart](http://google.com) - Simple http client for SWAPI. Includes DTOs (objects, interfaces), async Dart, and streams.
+*
+
 ## Experiments
 
 * [x] Create a local package, module, or library and utilize it in our entry point.
