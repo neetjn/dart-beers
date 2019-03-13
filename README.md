@@ -6,10 +6,15 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 ## Practices
 
-* [http.dart](http://google.com) - Simple http client for SWAPI. Includes DTOs (objects, interfaces), async Dart, and streams.
-*
+* :star: [http.dart](https://github.com/neetjn/dart-beers/blob/master/practice/http.dart) - Http client for SWAPI. (accumulated practices)
+* [annotations.dart](https://github.com/neetjn/dart-beers/blob/master/practice/annotations.dart) - (TODO) Simple annotation examples.
+* [classes.dart](https://github.com/neetjn/dart-beers/blob/master/practice/classes.dart) - Simple class exercise.
+* [errors.dart](https://github.com/neetjn/dart-beers/blob/master/practice/errors.dart) - (TODO) Simple exercise for handling errors.
+* [list.dart](https://github.com/neetjn/dart-beers/blob/master/practice/list.dart) - Simple exercise for lists and iterables.
+* [num.dart](https://github.com/neetjn/dart-beers/blob/master/practice/num.dart) - Simple arithmetic and algebra using Dart.
+* [string.dart](https://github.com/neetjn/dart-beers/blob/master/practice/string.dart) - Simple string exercises.
 
-## Experiments
+## Experiments (practice + dart-beers)
 
 * [x] Create a local package, module, or library and utilize it in our entry point.
 * [x] Leverage pub package manager for 3rd party packages.
