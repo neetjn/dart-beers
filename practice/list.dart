@@ -11,6 +11,7 @@ void main() {
   List<String> dictionary = ['Foo', 'Bar', 'lol'];
   // generate a list of a diffrent type from map
   List<int> index = dictionary.map<int>((item) => dictionary.indexOf(item)).toList();
+  assert(index.length == dictionary.length);
   // loop through list using list's forEach method
   index.forEach((item) => print(item));
   // loop through list using a for loop
@@ -19,13 +20,17 @@ void main() {
   }
   // append item to list
   index.add(index.length + 1);
+  assert(index.length == dictionary.length + 1);
   // insert item into list
   index.insert(0, -1);
+  assert(index.length == dictionary.length + 2);
   // reduce list
   // also see reduce, reduceLeft, and reduceRight
   int sum = index.reduce((a, b) => a + b);
   // create iterable for items in list based on condition
-  index.where((item) => item >= 0);
-  // find a single item in list
-  index.singleWhere((item) => item == 0);
+  Iterable<int> result = index.where((item) => item >= 0);
+  assert(result.toList().length == index.length - 1);
+  // find a single item in lists
+  int result2 = index.singleWhere((item) => item == 0);
+  assert(result2 == 0);
 }
