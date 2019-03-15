@@ -7,7 +7,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 ## Practices
 
 * :star: [http.dart](https://github.com/neetjn/dart-beers/blob/master/practice/http.dart) - Http client for SWAPI. (accumulated practices)
-* [annotations.dart](https://github.com/neetjn/dart-beers/blob/master/practice/annotations.dart) - (TODO) Simple annotation examples.
+* :star: [annotations.dart](https://github.com/neetjn/dart-beers/blob/master/practice/annotations.dart) - Annotation and class reflection examples with theoretical database implementation.
 * [classes.dart](https://github.com/neetjn/dart-beers/blob/master/practice/classes.dart) - Simple class exercise.
 * [errors.dart](https://github.com/neetjn/dart-beers/blob/master/practice/errors.dart) - Simple exercise for handling errors.
 * [io.dart](https://github.com/neetjn/dart-beers/blob/master/practice/io.dart) - Simple exercise for reading from and writing to a file.
@@ -28,7 +28,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [ ] Create a service description for my REST endpoints, following the HATEOAS model.
 * [ ] Handle multiple different HTTP verbs.
 * [ ] Handle and manipulate different media types.
-* [ ] Experiment with annotations for simplifying common REST features.
+* [x] Experiment with annotations for simplifying common REST features.
 * [ ] Add user authentication functionality.
 * [ ] Dockerize application (include 3rd party packages).
 * [ ] Create unit tests and execute on a CI/CD platform.
@@ -138,7 +138,10 @@ This project was created to learn Dart basics, as well as common use cases from 
 
 ## Closing Thoughts
 
-...
+* Dart is an incredibly intuitive language that allows developers coming from nearly any other platform to adopt it rapidly. (I mastered Dart in less than a week)
+* The market for Dart developers is very small, the Dart team seems to be focusing on platforming with the release of Dart 2 (ie; Flutter).
+* Adoption is very slow, but steady. The community isn't anywhere as mature as Javascript's, but support is widely available on common developer platforms.
+* Dart's ecosystem **is** mature enough to yield production level applications and services.
 
 ## Resources
 
