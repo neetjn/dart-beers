@@ -1,4 +1,4 @@
-library beers.lib.utils;
+library beers.utils;
 
 import 'dart:async';
 import 'dart:convert';

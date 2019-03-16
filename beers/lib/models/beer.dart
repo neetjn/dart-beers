@@ -1,4 +1,4 @@
-library beers.lib.constants;
+library beers.models.beer;
 
 import 'package:aqueduct/aqueduct.dart';
 

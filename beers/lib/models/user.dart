@@ -1,0 +1,1 @@
+library beers.models.user;
