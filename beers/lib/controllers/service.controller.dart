@@ -3,6 +3,7 @@ library beers.controllers.service;
 import 'dart:core';
 import 'package:aqueduct/aqueduct.dart';
 
+import 'package:beers/constants.dart' as constants;
 import 'package:beers/controllers/beer.controller.dart';
 import 'package:beers/controllers/user.controller.dart';
 
@@ -12,10 +13,12 @@ import 'package:beers/controllers/user.controller.dart';
 
 class ServiceController extends Controller {
   static final String route = '/';
+  static final uriTemplate = '{protocol}://${constants.APP_HOST}:${constants.APP_PORT}{route}';
 
   final Map routes = {
+    'root':ServiceController.route,
     'user': UserController.route,
-    'beer': UserController.route
+    'beer': BeersController.route
   };
 
   @override
@@ -25,6 +28,8 @@ class ServiceController extends Controller {
 
   @Operation.get()
   Future<Response> getBeerCollection() async {
+
+    Map routes = this.routes.map((key, val) => {})
 
     return Response.ok('');
   }

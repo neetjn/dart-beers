@@ -1,6 +1,7 @@
 import 'beers.dart';
-import 'package:beers/constants.dart';
+import 'package:beers/constants.dart' as constants;
 import 'package:beers/controllers/beer.controller.dart';
+import 'package:beers/controllers/user.controller.dart';
 import 'package:beers/controllers/service.controller.dart';
 
 /// This type initializes an application.
@@ -22,7 +23,11 @@ class BeersChannel extends ApplicationChannel {
 
     ManagedDataModel dataModel = ManagedDataModel.fromCurrentMirrorSystem();
     PostgreSQLPersistentStore persistentStore = PostgreSQLPersistentStore.fromConnectionInfo(
-    POSTGRES_USER, POSTGRES_PASS, POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DATABASE);
+      constants.POSTGRES_USER,
+      constants.POSTGRES_PASS,
+      constants.POSTGRES_HOST,
+      constants.POSTGRES_PORT,
+      constants.POSTGRES_DATABASE);
     context = ManagedContext(dataModel, persistentStore);
   }
 
@@ -36,13 +41,19 @@ class BeersChannel extends ApplicationChannel {
   Controller get entryPoint {
     final router = Router();
 
+    // BeersController.
+
     router
-      .route('/')
+      .route(BeersController.route)
       .link(() => ServiceController());
 
     router
       .route('/beers/[:id]')
       .link(() => BeersController(context));
+
+    router
+      .route('/user/[:id]')
+      .link(() => UserController(context))
 
     return router;
   }

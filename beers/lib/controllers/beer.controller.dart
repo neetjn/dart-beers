@@ -4,7 +4,7 @@ import 'dart:core';
 import 'package:aqueduct/aqueduct.dart';
 
 class BeersController extends Controller {
-  static final String route = '/beers/:id';
+  static final String route = '/beers/[:id]';
 
   final _beers = [
     {'id': 11, 'name': 'Captain America'},
