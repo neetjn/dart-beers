@@ -1,4 +1,4 @@
-library beers.lib.models.beer;
+library beers.controllers.beer;
 
 import 'dart:core';
 import 'package:aqueduct/aqueduct.dart';

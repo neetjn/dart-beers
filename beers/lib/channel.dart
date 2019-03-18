@@ -1,6 +1,7 @@
 import 'beers.dart';
 import 'package:beers/constants.dart';
 import 'package:beers/controllers/beer.controller.dart';
+import 'package:beers/controllers/service.controller.dart';
 
 /// This type initializes an application.
 ///
@@ -36,8 +37,13 @@ class BeersChannel extends ApplicationChannel {
     final router = Router();
 
     router
+      .route('/')
+      .link(() => ServiceController());
+
+    router
       .route('/beers/[:id]')
       .link(() => BeersController(context));
+
     return router;
   }
 }
