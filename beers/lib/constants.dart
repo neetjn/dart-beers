@@ -1,10 +1,11 @@
 library beers.constants;
 
-import 'dart:io' show Platform;
+import 'package:beers/beers/utils.dart';
 
-String APP_HOST = Platform.environment['APP_HOST'];
-String APP_PORT = Platform.environment['APP_PORT'];
-String POSTGRES_HOST = Platform.environment['POSTGRES_HOST'];
-String POSTGRES_PORT = Platform.environment['POSTGRES_PORT'];
-String MOGO_HOST = Platform.environment['MOGO_HOST'];
-String MOGO_PORT = Platform.environment['MOGO_PORT'];
+String APP_HOST = getEnv('APP_HOST', '0.0.0.0');
+int APP_PORT = int.parse(getEnv('APP_PORT', '8080'));
+String POSTGRES_HOST = getEnv('POSTGRES_HOST', 'localhost');
+int POSTGRES_PORT = int.parse(getEnv('POSTGRES_PORT', '5432'));
+String POSTGRES_USER = getEnv('POSTGRES_USER', 'postgres');
+String POSTGRES_PASS = getEnv('POSTGRES_PASS', '');
+String POSTGRES_DATABASE = getEnv('POSTGRES_DATABASE', 'beers');
