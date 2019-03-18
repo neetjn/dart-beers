@@ -24,15 +24,15 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [x] Create a basic DTO (data transfer object).
 * [x] Marshal and unmarshal DTO to string and Dart structure.
 * [x] Create an object factory/generator.
-* [ ] Expose REST endpoints for the experiment application.
+* [x] Expose REST endpoints for the experiment application.
 * [ ] Create a service description for my REST endpoints, following the HATEOAS model.
-* [ ] Handle multiple different HTTP verbs.
+* [x] Handle multiple different HTTP verbs.
 * [ ] Handle and manipulate different media types.
 * [x] Experiment with annotations for simplifying common REST features.
 * [ ] Add user authentication functionality.
-* [ ] Dockerize application (include 3rd party packages).
+* [x] Dockerize application (include 3rd party packages).
 * [ ] Create unit tests and execute on a CI/CD platform.
-* [ ] Connect to a relational database (Postgres).
+* [x] Connect to a relational database (Postgres).
 * [ ] Connect to a no-sql database (Mongo).
 
 ## What I've Learned
@@ -151,6 +151,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 * Dart gets a Type System - https://medium.com/dartlang/dart-gets-a-type-system-6bd3121772de
 * Top 10 Array utility methods you should know - https://codeburst.io/top-10-array-utility-methods-you-should-know-dart-feb2648ee3a2
 * Implicit Interfaces - https://www.dartlang.org/guides/language/language-tour#ch02-implicit-interfaces
+* Deploying With Docker & Kubernetes - https://aqueduct.io/docs/deploy/deploy_docker/
 
 ---
 
