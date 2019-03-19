@@ -8,3 +8,4 @@ environment:
   sdk: '>=2.0.0 <3.0.0'
 dependencies:
   aqueduct: '<=3.1.0+1'
+  colorize: any
