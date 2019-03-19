@@ -1,9 +1,10 @@
 library beers.controllers.user;
 
 import 'package:aqueduct/aqueduct.dart';
+import 'package:beers/constants.dart' as constants;
 import 'package:beers/controllers/base.controller.dart';
 
-@Resource(route: '/user/[:id]', rel: 'users')
+@Resource(route: constants.ServiceRouteDef.USERS, rel: constants.ServiceRelDef.USERS)
 class UserController extends BaseResourceController {
   final ManagedContext context;
 
