@@ -1,7 +1,6 @@
 library beers.controllers.service;
 
 import 'dart:core';
-import 'dart:mirrors';
 
 import 'package:aqueduct/aqueduct.dart';
 
