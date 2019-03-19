@@ -1,5 +1,6 @@
 import 'beers.dart';
 import 'package:beers/constants.dart' as constants;
+import 'package:beers/controllers/base.controller.dart';
 import 'package:beers/controllers/beer.controller.dart';
 import 'package:beers/controllers/user.controller.dart';
 import 'package:beers/controllers/service.controller.dart';
@@ -41,19 +42,18 @@ class BeersChannel extends ApplicationChannel {
   Controller get entryPoint {
     final router = Router();
 
-    // BeersController.
+    List<BaseResourceController> controllers = [
+      BeersController(context),
+      UserController(context)
+    ];
 
-    router
-      .route(BeersController.route)
-      .link(() => ServiceController());
+    // generate routes for all provided controllers
+    controllers.forEach((BaseResourceController controller) {
+      controller.GenerateRoute(router);
+    });
 
-    router
-      .route('/beers/[:id]')
-      .link(() => BeersController(context));
-
-    router
-      .route('/user/[:id]')
-      .link(() => UserController(context))
+    // define our service descriptor once all other routes have been defined.
+    ServiceController(controllers.map<Resource>((BaseResourceController ctrl) => ctrl.resource).toList()).GenerateRoute(router);
 
     return router;
   }

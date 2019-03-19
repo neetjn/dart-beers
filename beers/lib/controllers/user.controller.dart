@@ -1,10 +1,10 @@
 library beers.controllers.user;
 
 import 'package:aqueduct/aqueduct.dart';
+import 'package:beers/controllers/base.controller.dart';
 
-class UserController extends Controller {
-  static final String route = '/user/[:id]';
-
+@Resource(route: '/user/[:id]', rel: 'users')
+class UserController extends BaseResourceController {
   final ManagedContext context;
 
   UserController(this.context);

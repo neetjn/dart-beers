@@ -2,9 +2,10 @@ library beers.controllers.beer;
 
 import 'dart:core';
 import 'package:aqueduct/aqueduct.dart';
+import 'package:beers/controllers/base.controller.dart';
 
-class BeersController extends Controller {
-  static final String route = '/beers/[:id]';
+@Resource(route: '/beers/[:id]', rel: 'beers')
+class BeersController extends BaseResourceController {
 
   final _beers = [
     {'id': 11, 'name': 'Captain America'},

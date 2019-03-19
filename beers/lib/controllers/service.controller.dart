@@ -1,36 +1,30 @@
 library beers.controllers.service;
 
 import 'dart:core';
+import 'dart:mirrors';
+
 import 'package:aqueduct/aqueduct.dart';
 
 import 'package:beers/constants.dart' as constants;
-import 'package:beers/controllers/beer.controller.dart';
-import 'package:beers/controllers/user.controller.dart';
+import 'package:beers/mediatypes/apiroot.dart';
+import 'package:beers/controllers/base.controller.dart';
 
-//  TODO: left here, add definition for controller
-// add route to/url to method
-// import other controllers to construct uri's
+String constructUri({String route, String protocol: 'http'}) {
+  return '${protocol}://${constants.APP_HOST}:${constants.APP_PORT}${route}';
+}
 
-class ServiceController extends Controller {
-  static final String route = '/';
-  static final uriTemplate = '{protocol}://${constants.APP_HOST}:${constants.APP_PORT}{route}';
+@Resource(route: constants.ServiceRouteDef.ROOT, rel: constants.ServiceRelDef.ROOT)
+class ServiceController extends BaseResourceController {
+  List<Resource> resources;
+  ApiRootDto apiroot;
 
-  final Map routes = {
-    'root':ServiceController.route,
-    'user': UserController.route,
-    'beer': BeersController.route
-  };
-
-  @override
-  Future<RequestOrResponse> handle(Request request) async {
-    return Response.ok('');
+  ServiceController(List<Resource> this.resources) {
+    // TODO: replace with constructUri, serve on demand once routing resolved
+    apiroot = new ApiRootDto(resources.map<LinkDto>((Resource resource) => LinkDto(resource.route, resource.rel)).toList());
   }
 
   @Operation.get()
   Future<Response> getBeerCollection() async {
-
-    Map routes = this.routes.map((key, val) => {})
-
-    return Response.ok('');
+    return Response.ok(apiroot.asMap());
   }
 }

@@ -25,7 +25,7 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [x] Marshal and unmarshal DTO to string and Dart structure.
 * [x] Create an object factory/generator.
 * [x] Expose REST endpoints for the experiment application.
-* [ ] Create a service description for my REST endpoints, following the HATEOAS model.
+* [x] Create a service description for my REST endpoints, following the HATEOAS model.
 * [x] Handle multiple different HTTP verbs.
 * [ ] Handle and manipulate different media types.
 * [x] Experiment with annotations for simplifying common REST features.
