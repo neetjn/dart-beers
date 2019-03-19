@@ -1,5 +1,6 @@
 import 'beers.dart';
 import 'package:beers/constants.dart' as constants;
+import 'package:beers/beers/core.dart';
 import 'package:beers/controllers/base.controller.dart';
 import 'package:beers/controllers/beer.controller.dart';
 import 'package:beers/controllers/user.controller.dart';
@@ -30,6 +31,10 @@ class BeersChannel extends ApplicationChannel {
       constants.POSTGRES_PORT,
       constants.POSTGRES_DATABASE);
     context = ManagedContext(dataModel, persistentStore);
+
+    if (constants.APP_TEST) {
+      await bootstrapBeers(context);
+    }
   }
 
   /// Construct the request channel.
