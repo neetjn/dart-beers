@@ -3,8 +3,8 @@ library beers.constants;
 import 'package:beers/beers/utils.dart';
 
 bool APP_TEST = getEnv('APP_TEST', '').isNotEmpty;
-String APP_HOST = getEnv('APP_HOST', '0.0.0.0');
-int APP_PORT = int.parse(getEnv('APP_PORT', '8080'));
+String APP_HOST = getEnv('APP_HOST', 'localhost');
+int APP_PORT = int.parse(getEnv('APP_PORT', '8888'));
 String POSTGRES_HOST = getEnv('POSTGRES_HOST', 'localhost');
 int POSTGRES_PORT = int.parse(getEnv('POSTGRES_PORT', '5432'));
 String POSTGRES_USER = getEnv('POSTGRES_USER', 'postgres');

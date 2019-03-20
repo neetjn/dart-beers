@@ -27,13 +27,22 @@ class ApplicationContext {
     });
   }
 
-  String uriFromRel(String rel, {String protocol: 'http'}) {
+  String uriFromRel(String rel, {Map args: null, String protocol: 'http'}) {
     Resource resource = resources.firstWhere((r) => r.rel == rel);
-    return constructUri(resource.route, protocol: protocol);
+    String uri = constructUri(resource.route, protocol: protocol);
+    if (args != null) {
+      args.forEach((key, value) {
+        String mappedKey = '[:${key}]';
+        if (uri.contains(mappedKey)) {
+          uri = uri.replaceAll(mappedKey, value);
+        }
+      });
+    }
+    return uri;
   }
 
   ApiRootDto getServiceDescription({String protocol: 'http'}) {
-    ApiRootDto apiroot = new ApiRootDto(resources.map<LinkDto>((Resource resource) {
+    return new ApiRootDto(resources.map<LinkDto>((Resource resource) {
       return LinkDto(constructUri(resource.route, protocol: protocol), resource.rel);
     }).toList());
   }
