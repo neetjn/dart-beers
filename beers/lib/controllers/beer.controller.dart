@@ -2,30 +2,35 @@ library beers.controllers.beer;
 
 import 'package:aqueduct/aqueduct.dart';
 import 'package:beers/constants.dart' as constants;
+import 'package:beers/models/beer.model.dart';
 import 'package:beers/controllers/base.controller.dart';
 
-@Resource(route: constants.ServiceRouteDef.BEERS, rel: constants.ServiceRelDef.BEERS)
-class BeersController extends BaseResourceController {
-
-  final _beers = [
-    {'id': 11, 'name': 'Captain America'},
-    {'id': 12, 'name': 'Ironman'},
-    {'id': 13, 'name': 'Wonder Woman'},
-    {'id': 14, 'name': 'Hulk'},
-    {'id': 15, 'name': 'Black Widow'},
-  ];
-
+@Resource(route: constants.ServiceRouteDef.BEER, rel: constants.ServiceRelDef.BEER)
+class BeerController extends BaseResourceController {
   final ManagedContext context;
 
-  BeersController(this.context);
+  BeerController(this.context);
 
-  @override
-  Future<RequestOrResponse> handle(Request request) async {
-    return Response.ok(_beers);
+  @Operation.get('id')
+  Future<Response> getBeerResource(@Bind.path('id') String id) async {
+    Query query = Query<Beer>(context)
+      ..where((b) => b.id).equalTo(id);
+    Beer beer = await query.fetchOne();
+    return Response.ok(beer);
   }
+}
+
+@Resource(route: constants.ServiceRouteDef.BEERS, rel: constants.ServiceRelDef.BEERS)
+class BeerCollectionController extends BaseResourceController {
+  final ManagedContext context;
+
+  BeerCollectionController(this.context);
 
   @Operation.get()
   Future<Response> getBeerCollection() async {
-    return Response.ok(_beers);
+    Query query = Query<Beer>(context)
+      ..pageBy((b) => b.id, QuerySortOrder.ascending);
+    List<Beer> beers = await query.fetch();
+    return Response.ok(beers);
   }
 }

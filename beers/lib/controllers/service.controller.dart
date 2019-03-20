@@ -24,6 +24,6 @@ class ServiceController extends BaseResourceController {
       // TODO: figure out how to pull protocol from request
       return LinkDto(constructUri(resource.route), resource.rel);
     }).toList());
-    return Response.ok(apiroot.asMap());
+    return Response.ok(apiroot);
   }
 }

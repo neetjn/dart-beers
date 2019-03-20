@@ -48,8 +48,10 @@ class BeersChannel extends ApplicationChannel {
     final router = Router();
 
     List<BaseResourceController> controllers = [
-      BeersController(context),
-      UserController(context)
+      BeerController(context),
+      BeerCollectionController(context),
+      UserController(context),
+      // UserCollectionController(context)
     ];
 
     // generate routes for all provided controllers

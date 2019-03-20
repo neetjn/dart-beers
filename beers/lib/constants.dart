@@ -14,11 +14,15 @@ String POSTGRES_DATABASE = getEnv('POSTGRES_DATABASE', 'beers');
 class ServiceRelDef {
   static const String ROOT = 'root';
   static const String USERS = 'users';
+  static const String USER = 'user';
   static const String BEERS = 'beers';
+  static const String BEER = 'beer';
 }
 
 class ServiceRouteDef {
   static const String ROOT = '/';
-  static const String USERS = '/user/[:id]';
-  static const String BEERS = '/beer/[:id]';
+  static const String USERS = '/users';
+  static const String USER = '/user/[:id]';
+  static const String BEERS = '/beers';
+  static const String BEER = '/beer/[:id]';
 }
