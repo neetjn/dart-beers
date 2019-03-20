@@ -2,6 +2,7 @@ library beers.controllers.user;
 
 import 'package:aqueduct/aqueduct.dart';
 import 'package:beers/constants.dart' as constants;
+import 'package:beers/beers/core.dart';
 import 'package:beers/models/user.model.dart';
 import 'package:beers/controllers/base.controller.dart';
 
@@ -13,9 +14,7 @@ class UserController extends BaseResourceController {
 
   @Operation.get('id')
   Future<Response> getUserResource(@Bind.path('id') String id) async {
-    Query query = Query<User>(context)
-      ..where((u) => u.id).equalTo(id);
-    User user = await query.fetchOne();
+    User user = await getUserById(context, id);
     return Response.ok(user);
   }
 }
@@ -28,9 +27,7 @@ class UserCollectionController extends BaseResourceController {
 
   @Operation.get()
   Future<Response> getUserCollection() async {
-    Query query = Query<User>(context)
-      ..pageBy((u) => u.id, QuerySortOrder.ascending);
-    List<User> users = await query.fetch();
+    List<User> users = await getUsers(context);
     return Response.ok(users);
   }
 }

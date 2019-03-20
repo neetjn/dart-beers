@@ -6,7 +6,7 @@ class Beer extends ManagedObject<_Beer> implements _Beer{}
 
 class _Beer {
   @primaryKey
-  String id;
+  int id;
 
   @Column(unique: true, indexed: true)
   String name;

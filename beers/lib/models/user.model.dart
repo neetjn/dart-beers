@@ -7,7 +7,7 @@ class User extends ManagedObject<_User> implements _User {}
 
 class _User {
   @primaryKey
-  String id;
+  int id;
 
   @Column(unique: true, indexed: true)
   String username;
