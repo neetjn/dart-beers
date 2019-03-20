@@ -51,7 +51,7 @@ class BeersChannel extends ApplicationChannel {
       BeerController(context),
       BeerCollectionController(context),
       UserController(context),
-      // UserCollectionController(context)
+      UserCollectionController(context)
     ];
 
     // generate routes for all provided controllers
