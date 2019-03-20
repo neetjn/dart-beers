@@ -3,7 +3,10 @@ library beers.models.user;
 import 'package:aqueduct/aqueduct.dart';
 import 'package:beers/models/beer.model.dart';
 
-class User extends ManagedObject<_User> implements _User {}
+class User extends ManagedObject<_User> implements _User {
+  @Serialize()
+  String href;
+}
 
 class _User {
   @primaryKey

@@ -27,13 +27,10 @@ This project was created to learn Dart basics, as well as common use cases from 
 * [x] Expose REST endpoints for the experiment application.
 * [x] Create a service description for my REST endpoints, following the HATEOAS model.
 * [x] Handle multiple different HTTP verbs.
-* [ ] Handle and manipulate different media types.
 * [x] Experiment with annotations for simplifying common REST features.
-* [ ] Add user authentication functionality.
 * [x] Dockerize application (include 3rd party packages).
-* [ ] Create unit tests and execute on a CI/CD platform.
+* [x] Create unit tests and execute on a CI/CD platform.
 * [x] Connect to a relational database (Postgres).
-* [ ] Connect to a no-sql database (Mongo).
 
 ## What I've Learned
 
