@@ -45,23 +45,14 @@ class BeersChannel extends ApplicationChannel {
   /// This method is invoked after [prepare].
   @override
   Controller get entryPoint {
-    final router = Router();
-
-    List<BaseResourceController> controllers = [
+    final Router router = Router();
+    ApplicationContext(router, [
       BeerController(context),
       BeerCollectionController(context),
       UserController(context),
-      UserCollectionController(context)
-    ];
-
-    // generate routes for all provided controllers
-    controllers.forEach((BaseResourceController controller) {
-      controller.GenerateRoute(router);
-    });
-
-    // define our service descriptor once all other routes have been defined.
-    ServiceController(controllers.map<Resource>((BaseResourceController ctrl) => ctrl.resource).toList()).GenerateRoute(router);
-
+      UserCollectionController(context),
+      ServiceController()
+    ]);
     return router;
   }
 }

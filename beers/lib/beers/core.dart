@@ -80,7 +80,6 @@ Future<List<Beer>> getBeers(ManagedContext context) async {
 }
 
 Future<Beer> getBeerById(ManagedContext context, String id) async {
-  print(id);
   Query query = Query<Beer>(context)
     ..where((b) => b.id).equalTo(int.parse(id));
   return query.fetchOne();
