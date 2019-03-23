@@ -56,13 +56,3 @@ class BeersChannel extends ApplicationChannel {
     return router;
   }
 }
-
-class Harness extends TestHarness<BeersChannel> with TestHarnessORMMixin {
-  @override
-  ManagedContext get context => channel.context;
-
-  @override
-  Future onSetUp() async {
-    await resetData();
-  }
-}
